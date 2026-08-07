@@ -1,0 +1,106 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "website_content"
+    label: "Website Content"
+    files:
+      - name: "site"
+        label: "Site Settings"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Site URL", name: "siteUrl", widget: "string" }
+          - { label: "Logo Text", name: "logoText", widget: "string" }
+          - { label: "Footer Text", name: "footerText", widget: "text" }
+
+      - name: "homepage"
+        label: "Homepage"
+        file: "content/homepage.json"
+        format: "json"
+        fields:
+          - { label: "Hero Kicker", name: "heroKicker", widget: "string", required: false }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+
+          - label: "Pillars"
+            name: "pillars"
+            widget: "list"
+            required: false
+            collapsed: true
+            summary: "{{fields.number}} - {{fields.title}}"
+            fields:
+              - { label: "Number", name: "number", widget: "string", required: false }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+
+          - label: "Journey"
+            name: "journey"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Section Tag", name: "sectionTag", widget: "string", required: false }
+              - { label: "Heading", name: "heading", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - label: "Timeline Items"
+                name: "timelineItems"
+                widget: "list"
+                required: false
+                collapsed: true
+                summary: "{{fields.date}} - {{fields.title}}"
+                fields:
+                  - { label: "Date", name: "date", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Tags", name: "tags", widget: "list", required: false }
+
+          - label: "Expeditions"
+            name: "expeditions"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Section Tag", name: "sectionTag", widget: "string", required: false }
+              - { label: "Heading", name: "heading", widget: "string", required: false }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                required: false
+                collapsed: true
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Category Value", name: "categoryValue", widget: "string", required: false }
+                  - { label: "Category Label", name: "categoryLabel", widget: "string", required: false }
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Location", name: "location", widget: "string", required: false }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+                  - { label: "Details", name: "details", widget: "text", required: false }
+
+      - name: "gallery"
+        label: "Gallery"
+        file: "content/gallery.json"
+        format: "json"
+        fields:
+          - { label: "Topbar Link Text", name: "topbarLinkText", widget: "hidden", default: "← Back to Home" }
+          - { label: "Topbar Link URL", name: "topbarLinkUrl", widget: "hidden", default: "index.html" }
+          - { label: "Kicker", name: "kicker", widget: "hidden", default: "" }
+          - { label: "Chip", name: "chip", widget: "hidden", default: "" }
+          - { label: "Title", name: "title", widget: "hidden", default: "" }
+          - { label: "Description", name: "description", widget: "hidden", default: "" }
+
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            required: false
+            collapsed: true
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string", required: false }
+              - { label: "Size", name: "size", widget: "select", options: ["normal", "wide", "tall"], default: "normal" }
