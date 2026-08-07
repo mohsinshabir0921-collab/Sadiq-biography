@@ -1,0 +1,15 @@
+{
+  "photos": [
+    {
+      "image": "/images/uploads/chatgpt-image-jul-30-2026-04_36_21-pm.png",
+      "alt": "Bangus Valley landscape",
+      "size": "wide"
+    }
+  ],
+  "description": "A curated collection of memorable moments, field visits, landscapes, meetings, and personal archives presented in a clean visual layout.",
+  "title": "Photo Gallery",
+  "chip": "Curated Moments",
+  "kicker": "Visual Archive",
+  "topbarLinkUrl": "index.html",
+  "topbarLinkText": "← Back to Home"
+}
