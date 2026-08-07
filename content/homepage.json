@@ -1,0 +1,18 @@
+{
+  "pillars": [
+    {
+      "number": "01",
+      "title": "Landscape Photography",
+      "description": "Capturing the majestic mountains, valleys, rivers, lakes, and changing seasons of Kashmir in their purest form"
+    }
+  ],
+  "journey": {
+    "sectionTag": "02 / CHRONICLES",
+    "heading": "The Journey Behind Every Photograph",
+    "description": "From exploring the valleys of Kashmir to sharing unforgettable travel stories, every journey has shaped my perspective and every photograph preserves a memory."
+  },
+  "expeditions": {
+    "sectionTag": "03 / EXPEDITIONS",
+    "heading": "Places & Field Documentation"
+  }
+}
